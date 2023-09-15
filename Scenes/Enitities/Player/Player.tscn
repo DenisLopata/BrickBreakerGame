@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://btatb0rj6edun"]
+
+[ext_resource type="Script" path="res://Scenes/Enitities/Player/Player.gd" id="1_1m13f"]
+[ext_resource type="Texture2D" uid="uid://1wg5m4vtp1g1" path="res://Assets/Entities/Player/paddle_03.png" id="1_ax2k2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_shn72"]
+radius = 60.0
+height = 500.0
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(150, 500)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_1m13f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ax2k2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_shn72")

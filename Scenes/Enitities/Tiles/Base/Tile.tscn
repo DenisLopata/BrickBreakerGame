@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ydtocwwepux1"]
+
+[ext_resource type="Script" path="res://Scenes/Enitities/Tiles/Base/Tile.gd" id="1_gt0aa"]
+[ext_resource type="Texture2D" uid="uid://c5wwbnh1t58lp" path="res://Assets/Entities/Tiles/Green/Normal/tileGreen_02.png" id="1_iem1u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qb7b"]
+size = Vector2(47, 22)
+
+[node name="Tile" type="StaticBody2D"]
+position = Vector2(100, 100)
+script = ExtResource("1_gt0aa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_iem1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3qb7b")

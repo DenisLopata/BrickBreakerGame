@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjcugismdgh7t"]
+
+[ext_resource type="Script" path="res://SceneHandler.gd" id="1_iwdqh"]
+[ext_resource type="PackedScene" uid="uid://vo40br5oj5dq" path="res://Scenes/Maps/Map1.tscn" id="1_s6co2"]
+[ext_resource type="PackedScene" uid="uid://btatb0rj6edun" path="res://Scenes/Enitities/Player/Player.tscn" id="2_lovxt"]
+[ext_resource type="PackedScene" uid="uid://b4k0qb4ihm7ak" path="res://Scenes/Enitities/Ball/Ball.tscn" id="3_dvf6o"]
+
+[node name="SceneHandler" type="Node2D"]
+script = ExtResource("1_iwdqh")
+
+[node name="Map1" parent="." instance=ExtResource("1_s6co2")]
+
+[node name="Player" parent="." instance=ExtResource("2_lovxt")]
+position = Vector2(270, 860)
+
+[node name="Ball" parent="." instance=ExtResource("3_dvf6o")]
