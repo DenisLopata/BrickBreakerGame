@@ -13,7 +13,9 @@ config_version=5
 config/name="BrickBreaker"
 run/main_scene="res://SceneHandler.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/image="res://main_icon.png"
+boot_splash/fullsize=false
+config/icon="res://Assets/Entities/Ball/Grey/ballGrey_09.png"
 
 [display]
 
@@ -43,3 +45,4 @@ move_right={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
