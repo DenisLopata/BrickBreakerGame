@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://vo40br5oj5dq"]
+[gd_scene load_steps=7 format=3 uid="uid://vo40br5oj5dq"]
 
 [ext_resource type="Script" path="res://Scenes/Maps/Map1.gd" id="1_huv8q"]
+[ext_resource type="Script" path="res://Scenes/Maps/Collision.gd" id="2_27j1b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cikf0"]
 size = Vector2(540, 20)
@@ -22,23 +23,27 @@ position = Vector2(270, 960)
 
 [node name="Collision" type="CollisionShape2D" parent="Floor"]
 shape = SubResource("RectangleShape2D_cikf0")
+script = ExtResource("2_27j1b")
 
 [node name="Ceiling" type="StaticBody2D" parent="."]
 position = Vector2(270, -10)
 
 [node name="Collision" type="CollisionShape2D" parent="Ceiling"]
 shape = SubResource("RectangleShape2D_l2wd5")
+script = ExtResource("2_27j1b")
 
 [node name="WallLeft" type="StaticBody2D" parent="."]
 position = Vector2(-10, 480)
 
 [node name="Collision" type="CollisionShape2D" parent="WallLeft"]
 shape = SubResource("RectangleShape2D_uqape")
+script = ExtResource("2_27j1b")
 
 [node name="WallRight" type="StaticBody2D" parent="."]
 position = Vector2(550, 480)
 
 [node name="Collision" type="CollisionShape2D" parent="WallRight"]
 shape = SubResource("RectangleShape2D_23y1g")
+script = ExtResource("2_27j1b")
 
 [node name="TileHolder" type="Node" parent="."]
