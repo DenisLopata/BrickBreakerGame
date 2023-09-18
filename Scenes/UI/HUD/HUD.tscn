@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://rl6bi8mm6d7d"]
+
+[ext_resource type="Script" path="res://Scenes/UI/HUD/HUD.gd" id="1_nai1l"]
+[ext_resource type="LabelSettings" uid="uid://c1lwn3jrnkex7" path="res://Assets/Fonts/Future/future_32.tres" id="2_xmfwj"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_nai1l")
+
+[node name="MC" type="MarginContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -54.0
+offset_right = 54.0
+offset_bottom = 26.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VB" type="VBoxContainer" parent="MC"]
+layout_mode = 2
+
+[node name="HB" type="HBoxContainer" parent="MC/VB"]
+layout_mode = 2
+
+[node name="LevelScoreText" type="Label" parent="MC/VB/HB"]
+layout_mode = 2
+text = "Score: "
+label_settings = ExtResource("2_xmfwj")
+
+[node name="LevelScoreValue" type="Label" parent="MC/VB/HB"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("2_xmfwj")
+
+[node name="LevelLifeText" type="Label" parent="MC/VB/HB"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Life:"
+label_settings = ExtResource("2_xmfwj")
+
+[node name="LevelLifeValue" type="Label" parent="MC/VB/HB"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "3
+"
+label_settings = ExtResource("2_xmfwj")
+
+[node name="VB" type="VBoxContainer" parent="MC/VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CenterMessage" type="Label" parent="MC/VB/VB"]
+layout_mode = 2
+text = "Get Ready"
+label_settings = ExtResource("2_xmfwj")

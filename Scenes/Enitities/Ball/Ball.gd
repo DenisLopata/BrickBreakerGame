@@ -6,6 +6,8 @@ const SPEED = 700.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+signal ball_hit_brick(health)
+
 func _ready() -> void:
 	velocity = Vector2(5, SPEED)
 
@@ -25,6 +27,8 @@ func _physics_process(delta):
 		if colider_object.get("health"):
 			var brick_health = colider_object.get("health")
 			colider_object.health = brick_health - 1
+			#emit with value
+			ball_hit_brick.emit(brick_health)
 		
 		velocity = velocity.bounce(collision.get_normal())
 		

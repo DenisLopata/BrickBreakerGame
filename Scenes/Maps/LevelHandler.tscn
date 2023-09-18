@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://crnwdk3msqdir"]
+
+[ext_resource type="Script" path="res://Scenes/Maps/LevelHandler.gd" id="1_cbgvr"]
+[ext_resource type="PackedScene" uid="uid://vo40br5oj5dq" path="res://Scenes/Maps/Map1.tscn" id="2_klj4n"]
+[ext_resource type="PackedScene" uid="uid://btatb0rj6edun" path="res://Scenes/Enitities/Player/Player.tscn" id="3_h4yjb"]
+[ext_resource type="PackedScene" uid="uid://b4k0qb4ihm7ak" path="res://Scenes/Enitities/Ball/Ball.tscn" id="4_364hw"]
+[ext_resource type="PackedScene" uid="uid://rl6bi8mm6d7d" path="res://Scenes/UI/HUD/HUD.tscn" id="5_j15bj"]
+
+[node name="LevelHandler" type="Node"]
+script = ExtResource("1_cbgvr")
+
+[node name="Map1" parent="." instance=ExtResource("2_klj4n")]
+
+[node name="Player" parent="." instance=ExtResource("3_h4yjb")]
+
+[node name="Ball" parent="." instance=ExtResource("4_364hw")]
+
+[node name="HUD" parent="." instance=ExtResource("5_j15bj")]
+
+[node name="GameStartTimer" type="Timer" parent="."]
