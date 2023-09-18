@@ -7,15 +7,15 @@ extends Node2D
 @onready var wall_right := $WallRight as StaticBody2D
 @onready var tile_holder := $TileHolder as Node
 #@onready var tile_node :=  preload("res://Scenes/Enitities/Tiles/Base/Tile.tscn")
-@onready var tile_node :=  preload("res://Scenes/Enitities/Tiles/Blue/BlueTileNormal.tscn")
 @onready var tile_manager_node :=  preload("res://Scenes/Enitities/Tiles/TileManager.tscn")
 
 var brick_margin := 20 as int
-var area_margin := 32 as int
+var area_margin := Vector2i.ZERO
 var level : int
+var number_of_bricks := 0 as int
 
 func _ready() -> void:
-	level = 1
+	level = 2
 	_generate_collision_borders()
 	_generate_tiles()
 
@@ -33,12 +33,13 @@ func _generate_tiles() -> void:
 	var tile_dimensions := first_tile.tile_size as Vector2
 	first_tile.queue_free()
 	
-	area_margin = tile_dimensions.x
+	#set to tile x dimenasion
+	area_margin = tile_dimensions
 	
-	var tile_area_y_min = 0 + area_margin
-	var tile_area_x_min = 0 + area_margin
-	var tile_area_y_max = _screen_size.y / 2
-	var tile_area_x_max = _screen_size.x - area_margin
+	var tile_area_y_min = 0 + 200
+	var tile_area_x_min = 0 + area_margin.x * 2
+	var tile_area_y_max = _screen_size.y / 2 - area_margin.y
+	var tile_area_x_max = _screen_size.x - area_margin.x * 2
 	
 	
 	var x_range := range(tile_area_x_min, tile_area_x_max, tile_dimensions.x + brick_margin)
@@ -55,6 +56,7 @@ func _generate_tiles() -> void:
 			var tile = tile_manager.get_tile_type(level).instantiate()
 			tile.position = Vector2(x, y)
 			tile_holder.add_child(tile)
+			number_of_bricks += number_of_bricks
 	
 	pass
 

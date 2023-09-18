@@ -5,6 +5,10 @@ extends StaticBody2D
 
 @onready var sprite := $Sprite2D as Sprite2D
 
+
+@onready var sprite_brick_1 := preload("res://Assets/Entities/Tiles/Green/Normal/tileGreen_02.png")
+@onready var sprite_brick_2 := preload("res://Assets/Entities/Tiles/Blue/Normal/tileBlue_02.png")
+
 var tile_size : Vector2
 
 #delete object when it reaches 0 health
@@ -16,6 +20,14 @@ func _set_tile_health(val: int) -> void:
 		return
 	
 	health = val
+	#change brick sprite depending on health left
+	match val:
+		1:
+			sprite.texture = sprite_brick_1
+		2:
+			sprite.texture = sprite_brick_2
+		_:
+			return
 	pass
 
 func _ready():
@@ -26,7 +38,3 @@ func _tile_size() -> void:
 	var size_scaled = texture_size * scale
 	tile_size = size_scaled
 	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

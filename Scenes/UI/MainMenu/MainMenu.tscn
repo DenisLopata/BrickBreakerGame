@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwhhk2mvktsx2"]
+
+[ext_resource type="Script" path="res://Scenes/UI/MainMenu/MainMenu.gd" id="1_atltk"]
+[ext_resource type="Texture2D" uid="uid://botuxill1qiuj" path="res://Assets/UI/Buttons/blue_button13.png" id="1_woeaw"]
+[ext_resource type="Texture2D" uid="uid://dstolpn246bal" path="res://Assets/UI/Backgrounds/Blue_Nebula_08-1024x1024.png" id="2_3cf8p"]
+[ext_resource type="LabelSettings" uid="uid://d3hdm5gpu4cch" path="res://Assets/Fonts/Future/future_24_black.tres" id="2_robgv"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_atltk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3cf8p")
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="HB" type="HBoxContainer" parent="MC"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="VB" type="VBoxContainer" parent="MC/HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 4
+
+[node name="NewGame" type="TextureButton" parent="MC/HB/VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_woeaw")
+
+[node name="Label" type="Label" parent="MC/HB/VB/NewGame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "New Game"
+label_settings = ExtResource("2_robgv")
+horizontal_alignment = 1
+vertical_alignment = 1
