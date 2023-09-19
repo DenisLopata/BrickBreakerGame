@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED = 700.0
+#const SPEED = 700.0
+const SPEED = 1000.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -9,6 +10,15 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 signal ball_hit_brick(health)
 
 func _ready() -> void:
+#	velocity = Vector2(5, SPEED)
+	reset_ball() 
+	pass
+
+func reset_ball() -> void :
+	velocity = Vector2.ZERO
+	
+
+func start_ball() -> void:
 	velocity = Vector2(5, SPEED)
 
 func _physics_process(delta):

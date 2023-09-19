@@ -17,6 +17,7 @@ func _set_tile_health(val: int) -> void:
 	#on zero health destroy
 	if val == 0:
 		queue_free()
+		GameData.number_of_bricks_level = GameData.number_of_bricks_level - 1
 		return
 	
 	health = val
@@ -31,6 +32,7 @@ func _set_tile_health(val: int) -> void:
 	pass
 
 func _ready():
+#	scale = Vector2(1.25, 1.25)
 	_tile_size()
 
 func _tile_size() -> void:
