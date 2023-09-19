@@ -11,7 +11,7 @@ func get_tile_type(level: int) -> PackedScene:
 	var tile_type
 	match level:
 		1:
-			tile_type =green_tile
+			tile_type = green_tile
 		2: 
 			tile_type = blue_tile
 		_:

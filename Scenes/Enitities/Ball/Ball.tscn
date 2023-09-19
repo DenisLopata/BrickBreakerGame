@@ -4,16 +4,15 @@
 [ext_resource type="Script" path="res://Scenes/Enitities/Ball/Ball.gd" id="1_ss8da"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u6te5"]
-radius = 16.0
+radius = 64.0
 
 [node name="Ball" type="CharacterBody2D"]
+position = Vector2(270, 700)
+scale = Vector2(0.25, 0.25)
 script = ExtResource("1_ss8da")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(270, 480)
-scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_3hsms")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(270, 480)
 shape = SubResource("CircleShape2D_u6te5")

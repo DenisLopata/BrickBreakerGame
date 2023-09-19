@@ -17,10 +17,14 @@ boot_splash/image="res://main_icon.png"
 boot_splash/fullsize=false
 config/icon="res://Assets/Entities/Ball/Grey/ballGrey_09.png"
 
+[autoload]
+
+GameData="*res://Scenes/Singletons/GameData.gd"
+
 [display]
 
-window/size/viewport_width=540
-window/size/viewport_height=960
+window/size/viewport_width=768
+window/size/viewport_height=1366
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=1

@@ -15,12 +15,17 @@ var level : int
 var number_of_bricks := 0 as int
 
 func _ready() -> void:
-	level = 2
+	level = 1
+	create_level()
+
+func create_level() -> void :
 	_generate_collision_borders()
 	_generate_tiles()
+	
 
 func _generate_tiles() -> void:
-	
+	GameData.number_of_bricks_level = 0
+	number_of_bricks = 0
 	#we instantiate tile manager
 	var tile_manager = tile_manager_node.instantiate()
 	add_child(tile_manager)
@@ -56,8 +61,10 @@ func _generate_tiles() -> void:
 			var tile = tile_manager.get_tile_type(level).instantiate()
 			tile.position = Vector2(x, y)
 			tile_holder.add_child(tile)
-			number_of_bricks += number_of_bricks
-	
+			number_of_bricks = number_of_bricks + 1
+			
+	#add number of bricks on level to singleton
+	GameData.number_of_bricks_level = number_of_bricks
 	pass
 
 func _generate_collision_borders() -> void:
