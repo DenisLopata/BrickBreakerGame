@@ -8,6 +8,7 @@ extends StaticBody2D
 
 @onready var sprite_brick_1 := preload("res://Assets/Entities/Tiles/Green/Normal/tileGreen_02.png")
 @onready var sprite_brick_2 := preload("res://Assets/Entities/Tiles/Blue/Normal/tileBlue_02.png")
+@onready var sprite_brick_3 := preload("res://Assets/Entities/Tiles/Red/Normal/tileRed_02.png")
 
 var tile_size : Vector2
 
@@ -27,6 +28,8 @@ func _set_tile_health(val: int) -> void:
 			sprite.texture = sprite_brick_1
 		2:
 			sprite.texture = sprite_brick_2
+		3:
+			sprite.texture = sprite_brick_3
 		_:
 			return
 	pass
@@ -36,6 +39,7 @@ func _ready():
 	_tile_size()
 
 func _tile_size() -> void:
+	scale = Vector2(0.5, 0.5)
 	var texture_size = sprite.texture.get_size()
 	var size_scaled = texture_size * scale
 	tile_size = size_scaled

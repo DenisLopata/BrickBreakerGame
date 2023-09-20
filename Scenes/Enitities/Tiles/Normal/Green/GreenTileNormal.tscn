@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://nbltb7bu3hbr"]
+
+[ext_resource type="Texture2D" uid="uid://c5wwbnh1t58lp" path="res://Assets/Entities/Tiles/Green/Normal/tileGreen_02.png" id="1_67eng"]
+[ext_resource type="Script" path="res://Scenes/Enitities/Tiles/Normal/Green/GreenTileNormal.gd" id="1_pwua1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edqpn"]
+size = Vector2(188, 88)
+
+[node name="GreenTileNormal" type="StaticBody2D"]
+position = Vector2(100, 100)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_pwua1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_67eng")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_edqpn")

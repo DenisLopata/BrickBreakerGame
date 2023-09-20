@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://eo1rbr667llg"]
 
-[ext_resource type="Script" path="res://Scenes/Enitities/Tiles/Blue/BlueTileNormal.gd" id="1_rxyyh"]
-[ext_resource type="Texture2D" uid="uid://brru7vr6vse1" path="res://Assets/Entities/Tiles/Blue/Normal/tileBlue_02.png" id="1_tsslv"]
+[ext_resource type="Script" path="res://Scenes/Enitities/Tiles/Normal/Blue/BlueTileNormal.gd" id="1_shqh1"]
+[ext_resource type="Texture2D" uid="uid://brru7vr6vse1" path="res://Assets/Entities/Tiles/Blue/Normal/tileBlue_02.png" id="2_2dw02"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1877j"]
 size = Vector2(188, 88)
@@ -9,10 +9,10 @@ size = Vector2(188, 88)
 [node name="BlueTileNormal" type="StaticBody2D"]
 position = Vector2(100, 100)
 scale = Vector2(0.25, 0.25)
-script = ExtResource("1_rxyyh")
+script = ExtResource("1_shqh1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_tsslv")
+texture = ExtResource("2_2dw02")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1877j")
