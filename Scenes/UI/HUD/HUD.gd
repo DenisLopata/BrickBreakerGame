@@ -10,7 +10,15 @@ extends CanvasLayer
 signal switch_to_next_level
 
 func _ready():
+	var stri = ""
 	reset_hud_text()
+	var cutout_size = DisplayServer.get_display_cutouts()
+	var safe_area_size = DisplayServer.get_display_safe_area()
+	if cutout_size:
+		for coutout in cutout_size:
+			stri += str(coutout.size.y) + ", "
+	level_life_value_node.text = str(stri)
+#	level_life_value_node.text = str(cutout_size)
 
 func reset_hud_text() -> void:
 	center_message_label.visible = false

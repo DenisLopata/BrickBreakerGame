@@ -15,10 +15,10 @@ var level : int
 var number_of_bricks := 0 as int
 
 func _ready() -> void:
-	level = 1
 	create_level()
 
 func create_level() -> void :
+	level = GameData.current_game_level
 	_generate_collision_borders()
 	_generate_tiles()
 	
